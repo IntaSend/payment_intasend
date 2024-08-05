@@ -10,8 +10,7 @@ submission provided by the `payment` module.
 ## Supported features
 
 - Payment with redirection flow
-- Webhook notifications
-- Tokenization with payment
+
 
 ## Not implemented features
 
