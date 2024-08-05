@@ -29,14 +29,14 @@ Intasend is an online payments provider based in Kenya that enables merchants to
 3. Locate and copy the values of the Public Key and Secret Key fields.
 4. Store these keys securely, as you may not be able to access them later.
 
-![Intasend Dashboard](<Screenshot from 2024-08-01 16-33-57.png>)
+![Intasend Dashboard](<docs/Screenshot from 2024-08-01 16-33-57.png>)
 
 ## 2. Odoo Configuration (Self-Hosted)
 
 1. Locate the `addons` folder in the root directory of your Odoo project.
 2. Add the `payment_intasend` folder to the `addons` directory.
 
-![Odoo Addons Folder](<Screenshot from 2024-08-01 16-42-29.png>)
+![Odoo Addons Folder](<docs/Screenshot from 2024-08-01 16-42-29.png>)
 
 
 3. Restart the Odoo service to apply the changes:
@@ -49,7 +49,7 @@ systemctl restart odoo17
 1. Log into your Odoo platform.
 2. Go to the Apps menu and search for "Intasend".
 
-![Activate Intasend In Odoo](<Screenshot from 2024-08-01 16-58-45.png>)
+![Activate Intasend In Odoo](<docs/Screenshot from 2024-08-01 16-58-45.png>)
 
 3. Activate the payment_intasend app.
 
@@ -58,11 +58,11 @@ systemctl restart odoo17
 1. Navigate to the site where you want to configure Intasend.
 2. In the configuration options, click on "Payment Providers".
 
-![Intasend Configuration]!(<Screenshot from 2024-08-02 13-06-22.png>)
+![Intasend Configuration](<docs/Screenshot from 2024-08-02 13-06-22.png>)
 
 3. Find Intasend in the list and click "Activate".
 
-![Activate Intasend]!(<Screenshot from 2024-08-02 13-09-47.png>)
+![Activate Intasend](<docs/Screenshot from 2024-08-02 13-09-47.png>)
 
 4. On the Intasend configuration page:
 
@@ -70,7 +70,7 @@ systemctl restart odoo17
     * Toggle the state to "Enabled".
     * Click the "Save" button in the top left corner.
 
-![Enter Intasend Credentials](<Screenshot from 2024-08-02 13-15-23.png>)
+![Enter Intasend Credentials](<docs/Screenshot from 2024-08-02 13-15-23.png>)
 
 
 ## Conclusion
