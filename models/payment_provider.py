@@ -56,7 +56,7 @@ class PaymentProvider(models.Model):
         if is_validation:
             providers = providers.filtered(lambda p: p.code != 'intasend')
 
-        _logger.info("Compatible providers: %s", providers)
+        # _logger.info("Compatible providers: %s", providers)
         return providers
 
     def _get_supported_currencies(self):
@@ -66,7 +66,7 @@ class PaymentProvider(models.Model):
             supported_currencies = supported_currencies.filtered(
                 lambda c: c.name in const.SUPPORTED_CURRENCIES
             )
-        _logger.info("Supported currencies for provider %s: %s", self.code, supported_currencies)
+        # _logger.info("Supported currencies for provider %s: %s", self.code, supported_currencies)
         return supported_currencies
 
     def _intasend_make_request(self, endpoint, payload=None, method='POST'):
@@ -87,45 +87,41 @@ class PaymentProvider(models.Model):
             raise ValueError("Expected singleton: multiple payment provider records found.")
 
         # Add debugging information
-        _logger.info(f"Found payment provider records: {len(self)}")
+        # _logger.info(f"Found payment provider records: {len(self)}")
 
         
         self.ensure_one()
 
-        url = url_join('https://sandbox.intasend.com/api/v1/', endpoint + '/')
+        url = url_join('https://api.intasend.com/api/v1/', endpoint + '/')
         headers = {
             'X-IntaSend-Public-API-Key': f'{self.intasend_public_key}',
             'accept': 'application/json',
             'content-type': 'application/json',
         }
-        _logger.info("Request URL: %s", url)
-        _logger.info("Request method: %s", method)
-        _logger.info("Request headers: %s", headers)
-        _logger.info("Request payload: %s", payload)
+        # _logger.info("Request URL: %s", url)
+        # _logger.info("Request method: %s", method)
+        # _logger.info("Request headers: %s", headers)
+        # _logger.info("Request payload: %s", payload)
         try:
-            if method.upper() == 'GET':
-                response = requests.post(url, params=payload, headers=headers, timeout=30)
-            else:
-                response = requests.post(url, json=payload, headers=headers, timeout=30)
+            response = requests.post(url, json=payload, headers=headers, timeout=30)
             
             response.raise_for_status()  # This will raise an HTTPError for bad responses
             
         except requests.exceptions.HTTPError as e:
-            _logger.exception(
-                "Invalid API request at %s with data:\n%s", url, pprint.pformat(payload),
-            )
-            _logger.error("Response content: %s", response.content)
+            # _logger.exception(
+            #     "Invalid API request at %s with data:\n%s", url, pprint.pformat(payload),
+            # )
+            # _logger.error("Response content: %s", response.content)
             raise ValidationError("IntaSend: " + _(
-                "The communication with the API failed. IntaSend gave us the following "
-                "information: '%s'", response.json().get('message', '')
+                "Something went wrong  when processing the payment"
             ))
         except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as e:
-            _logger.exception("Unable to reach endpoint at %s", url)
+            # _logger.exception("Unable to reach endpoint at %s", url)
             raise ValidationError(
                 "IntaSend: " + _("Could not establish the connection to the API.")
             )
 
-        _logger.info("Response JSON: %s", response.json())
+        # _logger.info("Response JSON: %s", response.json())
         return response.json()
 
 
@@ -134,5 +130,5 @@ class PaymentProvider(models.Model):
         default_codes = super()._get_default_payment_method_codes()
         if self.code != 'intasend':
             return default_codes
-        _logger.info("Default payment method codes for IntaSend: %s", const.DEFAULT_PAYMENT_METHODS_CODES)
+        # _logger.info("Default payment method codes for IntaSend: %s", const.DEFAULT_PAYMENT_METHODS_CODES)
         return const.DEFAULT_PAYMENT_METHODS_CODES

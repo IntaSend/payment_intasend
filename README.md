@@ -25,7 +25,7 @@ Intasend is an online payments provider based in Kenya that enables merchants to
 ## 1. Intasend Dashboard Configuration
 
 1. Log into the [Intasend Dashboard](https://payment.intasend.com).
-2. Navigate to the [Integrations](https://sandbox.intasend.com/account/api-keys/) page.
+2. Navigate to the [Integrations](https://payment.intasend.com/account/api-keys/) page.
 3. Locate and copy the values of the Public Key and Secret Key fields.
 4. Store these keys securely, as you may not be able to access them later.
 

@@ -27,7 +27,7 @@ class PaymentTransaction(models.Model):
         if self.provider_code != 'intasend':
             return res
         
-        _logger.info("DATA IN SELF XXXXXXXXXXXXXXXXXXXXXXXXXXXXX: %s", pformat(self.read()[0]))
+        # _logger.info("DATA IN SELF XXXXXXXXXXXXXXXXXXXXXXXXXXXXX: %s", pformat(self.read()[0]))
 
         partner_country = self.partner_country_id[1] if self.partner_country_id and len(self.partner_country_id) > 1 else None
         partner_state = self.partner_state_id[1] if self.partner_state_id and len(self.partner_state_id) > 1 else None
@@ -57,7 +57,7 @@ class PaymentTransaction(models.Model):
             "ach_tarrif": "BUSINESS-PAYS"
         }
 
-        _logger.info("Payload for IntaSend: %s", payload)
+        # _logger.info("Payload for IntaSend: %s", payload)
 
         # Make the request to IntaSend
         response = self.provider_id._intasend_make_request('checkout', payload=payload)
@@ -66,7 +66,7 @@ class PaymentTransaction(models.Model):
         # if response.status_code != 200:
         #     raise ValidationError("IntaSend: " + _("Error in the response from IntaSend API."))
 
-        _logger.info("Response from IntaSend: %s", response)
+        # _logger.info("Response from IntaSend: %s", response)
 
         rendering_values = {
             'api_url': response['url'],
@@ -102,10 +102,10 @@ class PaymentTransaction(models.Model):
         }
 
         response_content = self.provider_id._intasend_make_request('tokenized-charges', payload=data)
-        _logger.info(
-            "Payment request response for transaction with reference %s:\n%s",
-            self.reference, pprint.pformat(response_content)
-        )
+        # _logger.info(
+        #     "Payment request response for transaction with reference %s:\n%s",
+        #     self.reference, pprint.pformat(response_content)
+        # )
         
         self._handle_notification_data('intasend', response_content['data'])
 
@@ -120,10 +120,10 @@ class PaymentTransaction(models.Model):
         signature = notification_data.get('signature')
         checkout_id = notification_data.get('checkout_id')
         if not reference:
-            _logger.error("Received data with missing reference.")
+            # _logger.error("Received data with missing reference.")
             raise ValidationError("IntaSend: " + _("Received data with missing reference."))
 
-        _logger.info("Verification data for IntaSend: checkout_id=%s, signature=%s", checkout_id, signature)
+        # _logger.info("Verification data for IntaSend: checkout_id=%s, signature=%s", checkout_id, signature)
         
 
         payload = {
@@ -139,19 +139,19 @@ class PaymentTransaction(models.Model):
         verification_response_content = response
 
 
-        _logger.info("Verification response content: %s", verification_response_content)
+        # _logger.info("Verification response content: %s", verification_response_content)
 
         api_ref = verification_response_content.get('api_ref')
 
 
         if not api_ref:
-            _logger.error("No api_ref found in the verification response.")
+            # _logger.error("No api_ref found in the verification response.")
             raise ValidationError("IntaSend: " + _("No api_ref found in the verification response."))
 
     # Use api_ref to find the transaction
         tx = self.search([('reference', '=', api_ref), ('provider_code', '=', 'intasend')])
         if not tx:
-            _logger.error("No transaction found matching reference %s.", reference)
+            # _logger.error("No transaction found matching reference %s.", reference)
             raise ValidationError(
                 "IntaSend: " + _("No transaction found matching reference %s.", reference)
             )
@@ -160,11 +160,11 @@ class PaymentTransaction(models.Model):
 
     def _process_notification_data(self, notification_data):
         # _logger.info("Processing notification data: %s", pprint(self))
-        _logger.info(
-        "Processing Notification Data With Self:\n%s\nNotification Data:\n%s",
-            pformat(self.read()[0]),
-            pformat(notification_data)
-    )
+    #     _logger.info(
+    #     "Processing Notification Data With Self:\n%s\nNotification Data:\n%s",
+    #         pformat(self.read()[0]),
+    #         pformat(notification_data)
+    # )
         # Comment out or remove the next line to prevent execution
         super()._process_notification_data(notification_data)
         if self.provider_code != 'intasend':
@@ -185,7 +185,7 @@ class PaymentTransaction(models.Model):
         response = intasend_provider._intasend_make_request('checkout/details', payload=payload)
 
         verification_response_content = response
-        _logger.info("Verification response content for api call 2: %s", verification_response_content)
+        # _logger.info("Verification response content for api call 2: %s", verification_response_content)
 
         paid = verification_response_content.get('paid')
 
@@ -193,10 +193,10 @@ class PaymentTransaction(models.Model):
             self._set_done()
         else:
             # Handle cases where payment is not completed
-            _logger.warning(
-                "Payment not completed for transaction with reference %s.",
-                self.reference
-            )
+            # _logger.warning(
+            #     "Payment not completed for transaction with reference %s.",
+            #     self.reference
+            # )
             self._set_pending()
 
         
