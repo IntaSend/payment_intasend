@@ -19,6 +19,3 @@ submission provided by the `payment` module.
 - Refunds
 
 ## Module history
-
-- `15.4`
-  - The first version of the module is merged. odoo/odoo#85514
