@@ -21,7 +21,7 @@
     'post_init_hook': 'post_init_hook',
     'uninstall_hook': 'uninstall_hook',
     'license': 'LGPL-3',
-    'images': ['static/description/cover_image.jpeg'], 
+    'images': ['static/description/cover_image.jpg'], 
     'support': 'support@intasend.com',  
     'application': False,  
     'auto_install': False,  
