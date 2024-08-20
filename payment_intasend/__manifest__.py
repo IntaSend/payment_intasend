@@ -9,15 +9,7 @@
     'author': 'IntaSend Team',
     'installable': True,
     'summary': "Payment gateway provider for the Kenyan market. Get M-Pesa, PesaLink, and card payments.",
-    'description': """
-        <p><strong>Payment Provider:</strong> IntaSend</p>
-        <p>Payment gateway provider for the Kenyan market. Get M-Pesa, PesaLink, and card payments.</p>
-        <ul>
-            <li><strong>Version:</strong> 1.0</li>
-            <li><strong>License:</strong> LGPL-3</li>
-            <li><strong>Website:</strong> <a href="https://intasend.com">https://intasend.com</a></li>
-        </ul>
-    """,
+    'description': "Payment gateway provider for the Kenyan market. Get M-Pesa, PesaLink, and card payments.",
     'depends': ['base', 'payment'],
     'data': [
         'views/payment_templates.xml',
