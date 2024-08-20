@@ -1,19 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intasend Payment Provider for Odoo</title>
+    <style>
+        .oe_container { padding: 20px; }
+        .oe_dark { background-color: #f5f5f5; }
+        .oe_slogan { margin-bottom: 20px; }
+        .oe_row { display: flex; flex-wrap: wrap; }
+        .oe_span12 { flex: 1; }
+        .oe_spaced { margin-bottom: 20px; }
+        .oe_demo { margin: 20px 0; }
+        .oe_picture { text-align: center; }
+        .oe_screenshot img { max-width: 100%; height: auto; }
+        .text-center { text-align: center; }
+        hr { border: none; height: 4px; }
+    </style>
+</head>
+<body>
+
 <section class="oe_container oe_dark">
     <div class="col-md-12">
-        <h2 class="oe_slogan" style="font-size: 35px;color:#2C0091"><b>Odoo 14 Accounting</b></h2>
+        <h1 class="oe_slogan" style="font-size: 35px; color: #2C0091;"><b>Intasend Payment Provider for Odoo</b></h1>
     </div>
 </section>
 
 <section class="oe_container">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">Financial Reports</h2>
-            <h3 class="oe_slogan" style="color:#000066;font-size: 24px;">Balance Sheet, Profit and Loss, Partner Ledger,
-                Aged Partner Balance, Aged Receivable, Aged Payable, General Ledger,
-                Trial Balance, Tax Reports, Journals Audit Reports</h3>
-            <div class="oe_demo oe_picture oe_screenshot">
-                <img src="financial_reports.png" style="height:400px;">
-            </div>
+            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">Overview</h2>
+            <p class="oe_slogan" style="color:#000066;font-size: 24px;">This module integrates Intasend, a Kenyan-based online payment provider, with Odoo. It allows merchants to facilitate payments worldwide through their Odoo-powered e-commerce platforms.</p>
         </div>
     </div>
 </section>
@@ -21,10 +38,13 @@
 <section class="oe_container oe_dark">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">Asset Management</h2>
-            <div class="oe_demo oe_picture oe_screenshot">
-                <img src="odoo14_asset_management.png" style="height:400px;">
-            </div>
+            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">Features</h2>
+            <ul class="oe_slogan" style="color:#000066;font-size: 24px;">
+                <li>Seamless integration with Odoo's payment system</li>
+                <li>Secure handling of transactions</li>
+                <li>Support for multiple currencies</li>
+                <li>Easy configuration through Odoo's admin interface</li>
+            </ul>
         </div>
     </div>
 </section>
@@ -32,10 +52,11 @@
 <section class="oe_container">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">Budget Management</h2>
-            <div class="oe_demo oe_picture oe_screenshot">
-                <img src="odoo14_budget.gif" style="height:400px;">
-            </div>
+            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">Requirements</h2>
+            <ul class="oe_slogan" style="color:#000066;font-size: 24px;">
+                <li>Odoo 17.0 or later</li>
+                <li>An active Intasend account</li>
+            </ul>
         </div>
     </div>
 </section>
@@ -43,10 +64,9 @@
 <section class="oe_container oe_dark">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">Accounting Dashboard</h2>
-            <div class="oe_demo oe_picture oe_screenshot">
-                <img src="account_dashboard.png" style="height:400px;">
-            </div>
+            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">Intasend Odoo Integration</h2>
+            <h3 class="oe_slogan" style="color:#000066;font-size: 24px;">Introduction</h3>
+            <p class="oe_slogan" style="color:#000066;font-size: 24px;">Intasend is an online payments provider based in Kenya that enables merchants to facilitate payments worldwide. This guide will walk you through the process of integrating Intasend with your Odoo platform.</p>
         </div>
     </div>
 </section>
@@ -54,31 +74,15 @@
 <section class="oe_container">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">Credit Limit</h2>
-            <h3 class="oe_slogan" style="color:#000066;font-size: 24px;">Activate credit limit from accounting settings and set
-            credit limits globally and for each partners, according to the need.
-            Need to know how it works ? Here is the video for you:
-            </h3>
-            <div style="text-align: center;">
-                 <a href="https://www.youtube.com/watch?v=wNhWs29T5Zs" target="_blank" class="fa fa-youtube-play" style="font-size:24px;color:red">
-                    Customer credit limit
-                </a>
-            </div>
+            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">1. Intasend Dashboard Configuration</h2>
+            <ol class="oe_slogan" style="color:#000066;font-size: 24px;">
+                <li>Log into the <a href="https://payment.intasend.com" target="_blank">Intasend Dashboard</a>.</li>
+                <li>Navigate to the <a href="https://payment.intasend.com/account/api-keys/" target="_blank">Integrations</a> page.</li>
+                <li>Locate and copy the values of the Public Key and Secret Key fields.</li>
+                <li>Store these keys securely, as you may not be able to access them later.</li>
+            </ol>
             <div class="oe_demo oe_picture oe_screenshot">
-                <img src="credit_limit.png" style="height:400px;">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container oe_dark">
-    <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">Customer Follow Up</h2>
-            <h3 class="oe_slogan" style="color:#000066;font-size: 24px;">Send follow up emails to customer regarding pending payments
-            </h3>
-            <div class="oe_demo oe_picture oe_screenshot">
-                <img src="customer_followup.png" style="height:400px;">
+                <img src="Screenshot_from_2024-08-01_16-33-57.png" alt="Intasend Dashboard">
             </div>
         </div>
     </div>
@@ -87,9 +91,31 @@
 <section class="oe_container">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">Recurring Payment</h2>
+            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">2. Odoo Configuration (Self-Hosted)</h2>
+            <ol class="oe_slogan" style="color:#000066;font-size: 24px;">
+                <li>Locate the `addons` folder in the root directory of your Odoo project.</li>
+                <li>Add the `payment_intasend` folder to the `addons` directory.</li>
+            </ol>
             <div class="oe_demo oe_picture oe_screenshot">
-                <img src="recurring_payment.png" style="height:400px;">
+                <img src="Screenshot_from_2024-08-01_16-42-29.png" alt="Odoo Addons Folder">
+            </div>
+            <p class="oe_slogan" style="color:#000066;font-size: 24px;">Restart the Odoo service to apply the changes:</p>
+            <pre><code>systemctl restart odoo17</code></pre>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">3. Activating Intasend in Odoo</h2>
+            <ol class="oe_slogan" style="color:#000066;font-size: 24px;">
+                <li>Log into your Odoo platform.</li>
+                <li>Go to the Apps menu and search for "Intasend".</li>
+                <li>Activate the payment_intasend app.</li>
+            </ol>
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img src="Screenshot_from_2024-08-01_16-58-45.png" alt="Activate Intasend In Odoo">
             </div>
         </div>
     </div>
@@ -98,15 +124,26 @@
 <section class="oe_container oe_dark">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">Daily Reports</h2>
-            <h3 class="oe_slogan" style="color:#000066;font-size: 24px;">Day Book, Cash Book and Bank Book</h3>
-            <div style="text-align: center;">
-                 <a href="https://www.youtube.com/watch?v=PEh-an8iCO0" target="_blank" class="fa fa-youtube-play" style="font-size:24px;color:red">
-                    Daily financial reports
-                </a>
+            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">4. Configuring Intasend for Your Site</h2>
+            <ol class="oe_slogan" style="color:#000066;font-size: 24px;">
+                <li>Navigate to the site where you want to configure Intasend.</li>
+                <li>In the configuration options, click on "Payment Providers".</li>
+                <li>Find Intasend in the list and click "Activate".</li>
+            </ol>
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img src="Screenshot_from_2024-08-02_13-06-22.png" alt="Intasend Configuration">
+            </div>
+            <p class="oe_slogan" style="color:#000066;font-size: 24px;">On the Intasend configuration page:</p>
+            <ul class="oe_slogan" style="color:#000066;font-size: 24px;">
+                <li>Enter the Public Key, Secret Key, and Webhook Key.</li>
+                <li>Toggle the state to "Enabled".</li>
+                <li>Click the "Save" button in the top left corner.</li>
+            </ul>
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img src="Screenshot_from_2024-08-02_13-09-47.png" alt="Activate Intasend">
             </div>
             <div class="oe_demo oe_picture oe_screenshot">
-                <img src="daily_reports.png" style="height:400px;">
+                <img src="Screenshot_from_2024-08-02_13-15-23.png" alt="Enter Intasend Credentials">
             </div>
         </div>
     </div>
@@ -115,100 +152,11 @@
 <section class="oe_container">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">Fiscal Year and Closing</h2>
-            <h3 class="oe_slogan" style="color:#000066;font-size: 24px;">
-                Manage fiscal years and year ending by setting lock dates
-            </h3>
-            <div class="oe_demo oe_picture oe_screenshot">
-                <img src="odoo14_fiscal_year.png" style="height:400px;">
-            </div>
+            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">Conclusion</h2>
+            <p class="oe_slogan" style="color:#000066;font-size: 24px;">You have now successfully integrated Intasend with your Odoo platform. Your customers can enjoy a seamless payment experience with Intasend's secure and efficient payment processing capabilities.</p>
         </div>
     </div>
 </section>
 
-<section class="oe_container oe_dark">
-    <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">Support Bank Statement Importing</h2>
-            <h3 class="oe_slogan" style="color:#000066;font-size: 24px;">Import bank statements in excel and csv formats</h3>
-            <div class="oe_demo oe_picture oe_screenshot">
-                <img src="odoo14_bank_statement.png" style="height:400px;">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">Account Settings</h2>
-            <h3 class="oe_slogan" style="color:#000066;font-size: 24px;">Enable sales receipts, purchase receipts, credit limit,
-                anglo saxon accounting and configure fiscal years from account settings
-            </h3>
-            <div class="oe_demo oe_picture oe_screenshot">
-                <img src="account_settings.png" style="height:400px;">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container oe_dark">
-    <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#332c3c;font-size: 28px;">Account Settings</h2>
-            <div class="oe_demo oe_picture oe_screenshot">
-                <img src="account_settings2.png" style="height:400px;">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-            <h2 class="oe_slogan" style="color:#714B67;font-size: 28px;">Need Enhanced Financial Reports ?</h2>
-            <h3 class="oe_slogan" style="color:#714B67;font-size: 28px;">
-                View financial reports in screen with filters and in PDF, Excel formats</h3>
-            <div class="oe_demo oe_picture oe_screenshot">
-                <img src="odoo_report.gif" style="height:400px;">
-            </div>
-            <div style="text-align: center;">
-                 <a href="https://apps.odoo.com/apps/modules/14.0/om_accounting_reports/" target="_blank" class="fa fa-bookmark" style="font-size:24px;color:#714B67">
-                    Enhanced accounting reports
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<hr style="width: 100%;height: 4px;background: #2C0091;margin: 0px 0px;">
-<hr style="width: 100%;height: 4px;background: #148963;margin: 0px 0px;">
-<section class="oe_container oe_dark">
-    <div class="oe_row ">
-        <div class="oe_slogan text-center">
-            <img src="odoo_mates.png"/>
-            <div style="color:#269900;">
-                <h3 style="color:#2C0091;font-size: 25px;">If you need any help or want more features, just contact us:</h3><br>
-                <h3 style="color:#2C0091;font-size: 20px;">Email: <a href="odoomates@gmail.com">odoomates@gmail.com</a> <br></h3>
-            </div>
-            <div class="oe_slogan">
-               <h2>
-                    <a target="_blank" href="https://www.facebook.com/odoomate/" target="new">
-                        <i class="fa fa-facebook-square" style="font-size:38px;"></i>
-                    </a>
-                    <a target="_blank" href="https://twitter.com/odoomates/" target="new">
-                        <i class="fa fa-twitter" style="font-size:38px;"></i>
-                    </a>
-                    <a href="#" target="_blank">
-                        <i class="fa fa-linkedin" style="font-size:38px;"></i>
-                    </a>
-                    <a target="_blank" href="https://www.youtube.com/channel/UCVKlUZP7HAhdQgs-9iTJklQ">
-                        <i class="fa fa-youtube-play" style="font-size:38px;"></i>
-                    </a>
-                </h2>
-            </div>
-        </div>
-    </div>
-</section>
-<hr style="width: 100%;height: 4px;background: #148963;margin: 0px 0px;">
-<hr style="width: 100%;height: 4px;background: #2C0091;margin: 0px 0px;">
+</body>
+</html>
